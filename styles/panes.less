@@ -31,3 +31,8 @@ atom-pane-container {
     &:last-child { border-bottom: none; }
   }
 }
+
+.pane:not([data-active-item-name*="."]){
+    background-color:@dark-base;
+    box-shadow:inset 15px 0 10px -10px rgba(0,0,0, .2),inset -15px 0 10px -10px rgba(0,0,0, .2),inset 0 1px 0 0 rgba(0,0,0, .15);
+}

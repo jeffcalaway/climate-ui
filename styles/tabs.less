@@ -10,6 +10,7 @@
 //       ∟Title
 //       ∟CloseButton
 //     _ActiveState
+//     _Modified
 //     _HoverState
 //     _Placeholder
 //
@@ -168,6 +169,29 @@ atom-workspace .horizontal .vertical{
         border-radius: 0;
         opacity      : 1;
         transform    : scale(1);
+    }
+}
+
+
+//▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
+// _Modified
+//▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+
+.tab.modified{
+    overflow:hidden;
+
+    .title:after{
+        content    :'\f00c';
+        font-family: 'normal normal normal 16px/1 octicons';
+        line-height: @tab-height - 6px;
+        text-align : right;
+        color      : @white;
+        right      : 15px;
+        z-index    : 3;
+        transform  : scale(1);
+        opacity    : 0.6;
+        cursor     : pointer;
+        transition : all 0.1s ease-in-out;
     }
 }
 

@@ -29,6 +29,10 @@ body[active-grammar*=".css"]{
             color:@dark-blue;
         }
     }
+
+    .gutter .line-number.cursor-line{
+        box-shadow:inset 3px 0 0 0 @blue !important;
+    }
 }
 
 //▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
@@ -53,6 +57,10 @@ body[active-grammar*=".gfm"]{
             color:@dark-green;
         }
     }
+
+    .gutter .line-number.cursor-line{
+        box-shadow:inset 3px 0 0 0 @green !important;
+    }
 }
 
 //▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
@@ -75,5 +83,9 @@ body[active-grammar*=".php"]{
         &,&:not(.list-nested-item){
             color:@dark-red;
         }
+    }
+
+    .gutter .line-number.cursor-line{
+        box-shadow:inset 3px 0 0 0 @red !important;
     }
 }

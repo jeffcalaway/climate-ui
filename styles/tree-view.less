@@ -51,14 +51,23 @@
         }
     }
 
+    // &.collapsed{
+    //     > .header{
+    //         &,span{
+    //             height:@tab-height;
+    //             line-height:@tab-height;
+    //         }
+    //     }
+    // }
+
     > .header{
         background-color: @dark-base;
         text-align:center;
         transition: background-color 0.3s ease-in-out;
 
         &,span{
-            height:@tab-height - 15px;
-            line-height:@tab-height - 15px;
+            height:@tab-height;
+            line-height:@tab-height;
 
             &:before{
                 display:none !important;
