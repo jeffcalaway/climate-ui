@@ -1,0 +1,126 @@
+@import "ui-mixins";
+@import "ui-variables";
+@import "buttons";
+
+atom-pane-container.panes{
+    box-shadow:-10px 0 15px 0 rgba(0,0,0, .15), -3px 0 10px 0 rgba(0,0,0, .15);
+    z-index:5;
+
+}
+
+.panel {
+  &.bordered {
+    border: 1px solid @base-border-color;
+    border-radius: @component-border-radius;
+  }
+}
+
+atom-panel, .tool-panel {
+  .text(normal);
+  position: relative;
+
+  background-color: @tool-panel-background-color;
+
+//░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+// ∟BottomPanel
+//░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+
+  &.bottom, &.panel-bottom {
+    background-color:@base;
+    border-top: 1px solid #2F3C4F;
+    z-index:5;
+
+    *{
+        font-family: 'Source Code Pro', 'Lucida Grande', 'Segoe UI', Ubuntu, Cantarell, sans-serif;
+        font-size:12px;
+        letter-spacing:-0.5px;
+        color:@dark-blue-gray;
+    }
+
+    .flexbox-repaint-hack{
+        padding: 0 12px;
+    }
+
+    linter-bottom-container{
+        margin-right:15px;
+    }
+
+    linter-bottom-tab{
+        border:none;
+        background:none !important;
+        color:@dark-blue-gray;
+
+        &.active{
+            &,span{
+                color:@blue-gray;
+            }
+        }
+    }
+
+    linter-bottom-status{
+        &.status-success{
+            &,*{
+                color:@blue;
+            }
+        }
+    }
+
+    .current-path,.grammar-status{
+        &,*{
+            color:@blue-gray;
+        }
+    }
+
+    .about-release-notes{
+        color:@blue;
+    }
+
+    .deprecation-cop-status{
+        &.text-warning{
+            &,*{
+                color:@teal;
+            }
+        }
+    }
+  }
+
+  &.left, &.panel-left {
+    // border-right: 1px solid @tool-panel-border-color;
+  }
+
+  &.right, &.panel-right {
+    // border-left: 1px solid @tool-panel-border-color;
+  }
+}
+
+.inset-panel {
+  position: relative;
+  background-color: @inset-panel-background-color;
+}
+
+.is-blurred {
+  atom-panel,
+  .inset-panel {
+  }
+}
+
+.panel-heading {
+  .text(normal);
+
+  border-bottom: 1px solid @panel-heading-border-color;
+  border-top: 1px solid fadein(@background-color-highlight, 10%);
+
+  background-color: transparent;
+  background-image: -webkit-linear-gradient(@panel-heading-background-color, darken(@panel-heading-background-color, 10%));
+
+  .btn {
+    padding-left: 8px;
+    padding-right: 8px;
+
+    @bg: lighten(@button-background-color, 10%);
+    @hover: lighten(@button-background-color-hover, 10%);
+    @selected: lighten(@button-background-color-selected, 10%);
+    @text: lighten(@text-color, 10%);
+    .btn-background(@bg, @hover, @selected, @text);
+  }
+}

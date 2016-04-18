@@ -1,0 +1,79 @@
+//░░░░░░░░░░░░░░░░░░░░░░░░
+//
+//     DIRECTORY
+//
+//     _Blue
+//     _Green
+//     _Red
+//
+//░░░░░░░░░░░░░░░░░░░░░░░░
+
+//▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
+// _Blue
+//▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+
+body[active-grammar*=".css"]{
+    .tab-bar.tab.active:after{
+        transition: all 0.15s ease-in-out;
+    }
+
+    .tab-bar,.tab,.tab:after,.tree-view > .directory > .header{
+        background-color:@dark-blue;
+    }
+    .tab.active:after{
+        background-color:@blue;
+    }
+
+    .list-tree li.selected{
+        &,&:not(.list-nested-item){
+            color:@dark-blue;
+        }
+    }
+}
+
+//▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
+// _Green
+//▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+
+body[active-grammar*=".js"],
+body[active-grammar*=".gfm"]{
+    .tab-bar.tab.active:after{
+        transition: all 0.15s ease-in-out;
+    }
+
+    .tab-bar,.tab,.tab:after,.tree-view > .directory > .header{
+        background-color:@dark-green;
+    }
+    .tab.active:after{
+        background-color:@green;
+    }
+
+    .list-tree li.selected{
+        &,&:not(.list-nested-item){
+            color:@dark-green;
+        }
+    }
+}
+
+//▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
+// _Red
+//▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+
+body[active-grammar*=".php"]{
+    .tab-bar.tab.active:after{
+        transition: all 0.15s ease-in-out;
+    }
+
+    .tab-bar,.tab,.tab:after,.tree-view > .directory > .header{
+        background-color:@dark-red;
+    }
+    .tab.active:after{
+        background-color:@red;
+    }
+
+    .list-tree li.selected{
+        &,&:not(.list-nested-item){
+            color:@dark-red;
+        }
+    }
+}

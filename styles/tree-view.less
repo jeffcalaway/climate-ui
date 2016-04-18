@@ -1,0 +1,181 @@
+@import "ui-variables";
+
+//░░░░░░░░░░░░░░░░░░░░░░░░
+//
+//     DIRECTORY
+//
+//     _Base
+//       ∟Resizer
+//     _Directory
+//     _Selected
+//     _Git
+//       ∟Modified
+//       ∟Added
+//
+//░░░░░░░░░░░░░░░░░░░░░░░░
+
+//▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
+// _Base
+//▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+
+.tree-view {
+    font-size : @font-size;
+    background: @tree-view-background-color;
+    padding: 0;
+    // min-width: 195px;
+}
+
+//░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+// ∟Resizer
+//░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+
+.tree-view-resizer {
+    // min-width: 195px;
+
+    .tree-view-resize-handle {
+        width: 8px;
+    }
+}
+
+//▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
+// _Directory
+//▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+
+.tree-view > .directory{
+    &:first-child{
+        > .header{
+            &,span{
+                height:@tab-height;
+                line-height:@tab-height;
+            }
+        }
+    }
+
+    > .header{
+        background-color: @dark-base;
+        text-align:center;
+        transition: background-color 0.3s ease-in-out;
+
+        &,span{
+            height:@tab-height - 15px;
+            line-height:@tab-height - 15px;
+
+            &:before{
+                display:none !important;
+            }
+        }
+
+        span{
+            color:@white;
+        }
+    }
+
+    &.collapsed + .directory{
+        box-shadow:0 -1px 0 0 rgba(0,0,0, .15);
+    }
+
+    > .entries{
+        padding:12px 0;
+
+        > .directory.list-nested-item{
+            // padding-top:12px;
+            padding-bottom:12px;
+            margin-bottom:12px;
+            border-bottom:1px solid @gray;
+        }
+    }
+}
+
+.list-item{
+    margin-left:0 !important;
+}
+
+.directory.selected{
+    &:before{
+        display:none;
+    }
+
+    > .header{
+        color: @dark-gray !important;
+        text-shadow: none !important;
+    }
+}
+
+.directory > .header{
+    &:before{
+        display:none !important;
+    }
+}
+
+.list-tree.has-collapsable-children .list-nested-item > .list-tree > li, .list-tree.has-collapsable-children .list-nested-item > .list-group > li{
+    padding-left:26px;
+}
+
+//▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
+// _Selected
+//▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+
+.list-tree li.selected{
+    transition: color 0.15s ease-in-out;
+
+    &,&:not(.list-nested-item){
+        // font-weight:800;
+        color:@dark-base;
+        text-shadow:none;
+    }
+
+    &:before{
+        display:none;
+    }
+}
+
+//▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
+// _Git
+//▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+
+.list-tree li{
+    position:relative;
+
+    &.directory{
+        &:after{
+            top:10px;
+        }
+    }
+
+    &:after{
+        content:"";
+        height:5px;
+        width:5px;
+        border-radius:50%;
+        opacity:0;
+        position:absolute;
+        left:10px;
+        top:10px;
+        transition: all 0.15s ease-in-out;
+        z-index:5;
+    }
+
+//░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+// ∟Modified
+//░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+
+&.status-modified{
+    &:after{
+        background-color:@yellow;
+        left:10px;
+        opacity:1;
+    }
+}
+
+//░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+// ∟Added
+//░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+
+&.status-added{
+    &:after{
+        background-color:@green;
+        left:10px;
+        opacity:1;
+    }
+}
+}

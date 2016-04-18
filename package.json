@@ -1,0 +1,19 @@
+{
+  "name": "atom-alphabet-ui",
+  "theme": "ui",
+  "version": "0.0.0",
+  "description": "A colorful user interface theme based on Google's style guide",
+  "keywords": [
+    "ui",
+    "theme",
+    "google",
+    "alphabet",
+    "material"
+  ],
+  "license": "MIT",
+  "repository": "https://github.com/atom/atom-alphabet-ui",
+  "engines": {
+    "atom": ">0.40.0"
+  },
+  "main": "./lib/atom-alphabet-ui"
+}
