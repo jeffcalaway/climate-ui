@@ -75,6 +75,7 @@ atom-workspace .horizontal .vertical{
     transition      : font-size 0.3s ease-in-out, line-height 0.3s ease-in-out, background-color 0.3s ease-in-out;
     overflow        : hidden;
     background-color: @dark-base;
+    padding-right:10px;
 
     &:before{
         background-color: rgba(0,0,0, .15);
@@ -124,15 +125,17 @@ atom-workspace .horizontal .vertical{
 }
 
 .close-icon {
-    line-height: @tab-height - 6px;
+    line-height: @tab-height - 6px !important;
     text-align : right;
-    color      : @white;
-    right      : 15px;
+    color      : @white !important;
+    right      : 18px !important;
     z-index    : 3;
     transform  : scale(0);
     opacity    : 0.6;
     cursor     : pointer;
     transition : all 0.1s ease-in-out;
+    position:absolute;
+    bottom:5px !important;
 
     &:hover {
         text-shadow: 0 2px 2px rgba(0,0,0,0.3);
@@ -177,21 +180,27 @@ atom-workspace .horizontal .vertical{
 // _Modified
 //▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
 
-.tab.modified{
-    overflow:hidden;
-
+.tab{
     .title:after{
-        content    :'\f00c';
-        font-family: 'normal normal normal 16px/1 octicons';
-        line-height: @tab-height - 6px;
-        text-align : right;
-        color      : @white;
-        right      : 15px;
-        z-index    : 3;
-        transform  : scale(1);
-        opacity    : 0.6;
-        cursor     : pointer;
-        transition : all 0.1s ease-in-out;
+        content:"\e3dd";
+        font-family:@material;
+        position:absolute;
+        top:50%;
+        transform:translateY(-50%) scale(0);
+        transition:all 0.15s ease-in-out;
+        right:5px;
+    }
+
+    &:hover{
+        .title:after{
+            transform:translateY(-50%) scale(0) !important;
+        }
+    }
+
+    &.modified{
+        .title:after{
+            transform:translateY(-50%) scale(1);
+        }
     }
 }
 

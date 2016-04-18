@@ -1,16 +1,53 @@
-// @font-face {
-//   font-family: 'Material Icons';
-//   font-style: normal;
-//   font-weight: 400;
-//   src: url(atom://atom-alphabet-ui/MaterialIcons-Regular.eot);
-//   src: local('Material Icons'),
-//        local('MaterialIcons-Regular'),
-//        url(atom://atom-alphabet-ui/MaterialIcons-Regular.woff2) format('woff2'),
-//        url(atom://atom-alphabet-ui/MaterialIcons-Regular.woff) format('woff'),
-//        url(atom://atom-alphabet-ui/MaterialIcons-Regular.ttf) format('truetype');
-// }
-//
-// .icon-file-directory::before{
-//     font-family:'Material Icons' !important;
-//     content:'\f224' !important;
-// }
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url("atom://atom-alphabet-ui/icons/MaterialIcons-Regular.eot");
+  src: local('Material Icons'),
+       local('MaterialIcons-Regular'),
+       url("atom://atom-alphabet-ui/icons/MaterialIcons-Regular.woff2") format('woff2'),
+       url("atom://atom-alphabet-ui/icons/MaterialIcons-Regular.woff") format('woff'),
+       url("atom://atom-alphabet-ui/icons/MaterialIcons-Regular.ttf") format('truetype');
+}
+
+@material:'Material Icons';
+
+.icon::before{
+    width:20px;
+}
+
+.directory.collapsed > .list-item > .icon-file-directory::before,
+.directory.expanded > .list-item > .icon-file-directory::before,
+.icon-file-text::before,
+.icon-file-media::before,
+.icon-book::before,
+.icon-file-binary::before{
+    font-family:@material;
+    font-size:18px;
+    height:18px;
+    top:4px !important;
+}
+
+.directory.collapsed > .list-item > .icon-file-directory::before{
+    content:"\e2c7";
+}
+
+.directory.expanded > .list-item > .icon-file-directory::before{
+    content:"\e2c8";
+}
+
+.icon-file-text::before{
+    content:"\e873";
+}
+
+.icon-file-media::before{
+    content:"\e3af";
+}
+
+.icon-book::before{
+    content:"\e8fd";
+}
+
+.icon-file-binary::before{
+    content:"\e322";
+}
