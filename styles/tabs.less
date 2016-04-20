@@ -40,7 +40,11 @@ atom-workspace .horizontal .vertical{
              line-height: @tab-height / 1.8 !important;
 
              .close-icon{
-                 line-height: (@tab-height / 1.5) - 6px;
+                 line-height: (@tab-height / 1.5) - 6px !important;
+             }
+
+             &.modified .title:after{
+                 transform:translateY(-45%) scale(1);
              }
          }
      }
