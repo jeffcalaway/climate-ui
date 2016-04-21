@@ -11,6 +11,7 @@
 //     _Git
 //       ∟Modified
 //       ∟Added
+//       ∟TurnedOff
 //
 //░░░░░░░░░░░░░░░░░░░░░░░░
 
@@ -22,7 +23,7 @@
     font-size : @font-size;
     background: @tree-view-background-color;
     padding: 0;
-    min-width: auto;
+    // min-width: auto;
 }
 
 //░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
@@ -30,7 +31,7 @@
 //░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
 
 .tree-view-resizer {
-    // min-width: 195px;
+    // min-width: auto;
 
     .tree-view-resize-handle {
         width: 8px;
@@ -188,4 +189,16 @@
         opacity:1;
     }
 }
+}
+
+//░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+// ∟TurnedOff
+//░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+
+.hide-git-status-in-tree-view{
+    .list-tree li{
+        &:after{
+            display:none !important;
+        }
+    }
 }
