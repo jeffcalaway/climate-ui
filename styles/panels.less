@@ -32,7 +32,7 @@ atom-panel, .tool-panel {
 
     *{
         font-family: 'Source Code Pro', 'Lucida Grande', 'Segoe UI', Ubuntu, Cantarell, sans-serif;
-        font-size:12px;
+        // font-size:12px;
         letter-spacing:-0.5px;
         color:@dark-blue-gray;
     }
@@ -106,12 +106,19 @@ atom-panel, .tool-panel {
 
 .panel-heading {
   .text(normal);
+    background-color:@blue;
+    box-shadow:0 2px 2px 0 rgba(0,0,0,0.3);
+    color:@white;
+    z-index:5;
 
-  border-bottom: 1px solid @panel-heading-border-color;
-  border-top: 1px solid fadein(@background-color-highlight, 10%);
-
-  background-color: transparent;
-  background-image: -webkit-linear-gradient(@panel-heading-background-color, darken(@panel-heading-background-color, 10%));
+    .highlight-info{
+        background-color:@white;
+        color:@blue;
+        border-radius:0;
+        margin-left:2px;
+        padding-left:5px;
+        padding-right:5px;
+    }
 
   .btn {
     padding-left: 8px;

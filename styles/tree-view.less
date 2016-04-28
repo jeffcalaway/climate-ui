@@ -65,6 +65,7 @@
         background-color: @dark-base;
         text-align:center;
         transition: background-color 0.3s ease-in-out;
+        box-shadow:0 0 0 0 rgba(0,0,0,0);
 
         &,span{
             height:@tab-height;
@@ -79,6 +80,15 @@
             color:@white;
             padding:0 26px;
         }
+    }
+
+    &.expanded > .header{
+        box-shadow:0 0 10px 0 rgba(0,0,0,0.2),0 2px 5px 0 rgba(0,0,0,0.24);
+        transition: box-shadow 0.1s 0s ease-in-out, background-color 0.3s ease-in-out;
+    }
+
+    &.collapsed > .header{
+        transition: box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out;
     }
 
     &.collapsed + .directory{

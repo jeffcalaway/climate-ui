@@ -10,7 +10,9 @@ atom-text-editor[mini], atom-text-editor[mini]::shadow {
   padding-left: @component-padding/2;
 
   .cursor { border-color: #fff; }
-  // .selection .region { background-color: lighten(@input-background-color, 10%); }
+  .selection .region {
+      background-color: @gray;
+  }
 }
 
 // atom-text-editor[mini].is-focused, atom-text-editor[mini].is-focused::shadow {
