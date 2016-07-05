@@ -37,3 +37,27 @@
   color: @text-color-error;
   text-shadow: none;
 }
+.color-to-filetype(@filetype, @color){
+    body[active-grammar*="@{filetype}"]{
+        .tab-bar.tab.active:after{
+            transition: all 0.15s ease-in-out;
+        }
+
+        .tab-bar,.tab,.tab:after,.tree-view > .directory > .header{
+            background-color:darken(@color,5%);
+        }
+        .tab.active:after{
+            background-color:@color;
+        }
+
+        .list-tree li.selected{
+            &,&:not(.list-nested-item){
+                color:darken(@color,5%);
+            }
+        }
+
+        .gutter .line-number.cursor-line{
+            box-shadow:inset 3px 0 0 0 @color !important;
+        }
+    }
+}
