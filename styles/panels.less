@@ -3,9 +3,8 @@
 @import "buttons";
 
 atom-panel-container.left + .vertical{
-    box-shadow:-10px 0 15px 0 rgba(0,0,0, .15), -3px 0 10px 0 rgba(0,0,0, .15);
-    z-index:5;
-
+    box-shadow:0 2px 10px 0 rgba(0,0,0, .08), 0 2px 5px 0 rgba(0,0,0, .1);
+    z-index:2;
 }
 
 .panel {
@@ -25,10 +24,14 @@ atom-panel, .tool-panel {
 // ∟BottomPanel
 //░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
 
-  &.bottom, &.panel-bottom {
-    background-color:@base;
-    border-top: 1px solid #2F3C4F;
-    z-index:5;
+&.panel-footer{
+    padding:7px 0 5px;
+}
+
+  &.panel-footer, &.panel-bottom {
+    background-color:@tree-view-background-color;
+    // border-top: 1px solid #2F3C4F;
+    z-index:1;
 
     *{
         font-family: 'Source Code Pro', 'Lucida Grande', 'Segoe UI', Ubuntu, Cantarell, sans-serif;
@@ -62,6 +65,13 @@ atom-panel, .tool-panel {
             &,*{
                 color:@blue;
             }
+        }
+    }
+
+    .package-updates-status-view{
+        .icon-package,
+        .available-updates-status{
+            color:@blue;
         }
     }
 

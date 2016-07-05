@@ -1,0 +1,121 @@
+@import "ui-variables";
+
+//░░░░░░░░░░░░░░░░░░░░░░░░
+//
+//     DIRECTORY
+//
+//     _Animations
+//     _Base
+//     _Menu
+//     _SectionContainer
+//
+//░░░░░░░░░░░░░░░░░░░░░░░░
+
+//▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
+// _Animations
+//▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+
+@keyframes slideFromLeft {
+    from {
+        opacity:0;
+        transform:translateX(-50px);
+        box-shadow:0 -2px 2px -3px rgba(0,0,0, 0);
+    }
+    to {
+        opacity:1;
+        transform:translateX(0);
+        box-shadow:0 -5px 8px -3px rgba(0,0,0, 0.3);
+    }
+}
+
+@keyframes slideFromBelow {
+    from {
+        opacity:0;
+        transform:translateY(-50px);
+    }
+    to {
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+
+//▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
+// _Base
+//▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+
+atom-pane-container atom-pane .item-views .pane-item.settings-view{
+    background-color:#EEE;
+    overflow:hidden;
+
+
+//▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
+// _Menu
+//▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+
+.config-menu{
+    background-color:@dark-blue;
+    border-right:none;
+    box-shadow:2px 0 3px 0 rgba(0,0,0,0.3);
+    animation-name: slideFromLeft;
+    animation-duration: 0.5s;
+
+    li{
+        a{
+            color:@white;
+            transition:all 0.35s ease-in-out;
+
+            &:before{
+                opacity:0.3;
+            }
+
+            &:hover{
+                background-color:rgba(255,255,255,0.05);
+                // box-shadow:0 0 8px 0 rgba(0,0,0,0.2);
+            }
+        }
+
+        &.active{
+            a{
+                background-color:@blue;
+                color:@white;
+                // box-shadow: 0 0 20px 0 rgba(0,0,0,0.2),0 3px 5px 0 rgba(0,0,0,0.24);
+                position:relative;
+                z-index:5;
+            }
+        }
+    }
+
+    .btn{
+        box-shadow: 0 0 12px 0 rgba(0,0,0,0.1),0 2px 5px 0 rgba(0,0,0,0.2);
+        background-image:none;
+        background-color:@white;
+        color:@dark-gray;
+        border-radius:0;
+
+        &:before{
+            display:none;
+        }
+    }
+}
+
+
+//▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
+// _SectionContainer
+//▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+
+.section{
+    animation-name: slideFromBelow;
+    animation-duration: 0.5s;
+}
+
+
+//▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
+// _SectionHeading
+//▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+
+.section-heading{
+    color:#7D7D7D;
+}
+
+}

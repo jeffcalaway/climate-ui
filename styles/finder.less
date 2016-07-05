@@ -13,14 +13,17 @@
 //▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
 
 @keyframes slideIn {
-    from {
+    0% {
         opacity:0;
-        // transform:scaleY(0.3);
+        transform:scaleY(1);
         box-shadow:0 -2px 2px -3px rgba(0,0,0, 0);
     }
-    to {
+    0.2%{
+        transform:scaleY(0.3);
+    }
+    100% {
         opacity:1;
-        // transform:scaleY(1);
+        transform:scaleY(1);
         box-shadow:0 -5px 8px -3px rgba(0,0,0, 0.3);
     }
 }
