@@ -7,7 +7,7 @@ A user interface theme for [Climate Syntax](https://github.com/jmcalaway/atom-al
 With the terminal open, key the following:
 
 ```shell
-apm install atom-alphabet-ui
+apm install climate-ui
 ```
 
 ![screenshot](screenshot-here.png)
