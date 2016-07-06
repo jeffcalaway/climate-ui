@@ -13,7 +13,7 @@
     "material"
   ],
   "license": "MIT",
-  "repository": "https://github.com/atom/atom-alphabet-ui",
+  "repository": "https://github.com/jmcalaway/climate-ui",
   "engines": {
     "atom": ">0.40.0"
   },
