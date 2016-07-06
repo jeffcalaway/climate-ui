@@ -1,17 +1,16 @@
 .hide-idle-tree-items{
     .tree-view:not(:hover){
-        background-color:@base;
         .entries .directory .header, .entries .directory .header span,.list-tree li:not(.open){
             // color:@gray !important;
-            color:rgba(255,255,255, .1);
+            color:fade(@blue-gray,15%);
         }
 
         .list-tree li.open{
-            color:@white;
+            color:@text-color-highlight;
         }
 
         > .directory > .entries > .directory.list-nested-item{
-            border-color:rgba(255,255,255, .05);
+            // border-color:rgba(255,255,255, .05);
         }
 
         .list-tree li:after{

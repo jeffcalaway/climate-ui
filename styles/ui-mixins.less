@@ -44,7 +44,7 @@
         }
 
         .tab-bar,.tab,.tab:after,.tree-view > .directory > .header{
-            background-color:darken(@color,5%);
+            background-color:darken(desaturate(@color,4%),5%);
         }
         .tab.active:after{
             background-color:@color;
@@ -52,7 +52,7 @@
 
         .list-tree li.selected{
             &,&:not(.list-nested-item){
-                color:darken(@color,5%);
+                color:darken(desaturate(@color,4%),5%);
             }
         }
 

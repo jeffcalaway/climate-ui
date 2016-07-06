@@ -8,6 +8,12 @@
 //     _Base
 //     _Menu
 //     _SectionContainer
+//     _Headings
+//     _Inputs
+//     _Links
+//     _Package
+//     _Buttons
+//     _Badge
 //
 //░░░░░░░░░░░░░░░░░░░░░░░░
 
@@ -15,27 +21,27 @@
 // _Animations
 //▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
 
+// @keyframes slideFromLeft {
+//     from {
+//         opacity:0;
+//         transform:translateX(-50px);
+//         box-shadow:0 -2px 2px -3px rgba(0,0,0, 0);
+//     }
+//     to {
+//         opacity:1;
+//         transform:translateX(0);
+//         box-shadow:0 -5px 8px -3px rgba(0,0,0, 0.3);
+//     }
+// }
+
 @keyframes slideFromLeft {
     from {
         opacity:0;
         transform:translateX(-50px);
-        box-shadow:0 -2px 2px -3px rgba(0,0,0, 0);
     }
     to {
         opacity:1;
         transform:translateX(0);
-        box-shadow:0 -5px 8px -3px rgba(0,0,0, 0.3);
-    }
-}
-
-@keyframes slideFromBelow {
-    from {
-        opacity:0;
-        transform:translateY(-50px);
-    }
-    to {
-        opacity:1;
-        transform:translateY(0);
     }
 }
 
@@ -45,7 +51,7 @@
 //▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
 
 atom-pane-container atom-pane .item-views .pane-item.settings-view{
-    background-color:#EEE;
+    background-color:@base;
     overflow:hidden;
 
 
@@ -54,19 +60,62 @@ atom-pane-container atom-pane .item-views .pane-item.settings-view{
 //▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
 
 .config-menu{
-    background-color:@dark-blue;
+    background-color:@white;
     border-right:none;
-    box-shadow:2px 0 3px 0 rgba(0,0,0,0.3);
-    animation-name: slideFromLeft;
-    animation-duration: 0.5s;
+    min-width:72px;
+    max-width:72px;
+    padding:12px;
+    flex:0.5;
+    overflow-x:visible;
+    box-shadow:0 3px 3px 0 rgba(0,0,0,0.2) inset;
 
     li{
-        a{
+        margin-bottom:10px;
+        position:relative;
+
+        &:before{
+            background-color:darken(#9DABBF,2);
             color:@white;
+            content:attr(name);
+            position:absolute;
+            top:49%;
+            left:90%;
+            transform:translateY(-50%);
+            opacity:0;
+            z-index:-1;
+            padding:5px 8px;
+            border-radius:2px;
+        }
+
+        &:hover{
+            &:before{
+                transition:all 0.35s ease-in-out;
+                opacity:1;
+                z-index:999;
+                left:110%;
+            }
+        }
+
+        a{
+            font-size:0;
+            color:#9DABBF;
             transition:all 0.35s ease-in-out;
+            height:45px;
+            width:45px;
+            padding:0;
+            text-align:center;
+            position:relative;
+            border-radius:50%;
 
             &:before{
-                opacity:0.3;
+                font-size:20px;
+                opacity: 1;
+                position:absolute;
+                top:46%;
+                left:0;
+                right:0;
+                transform:translateY(-50%);
+                margin:0 auto;
             }
 
             &:hover{
@@ -77,20 +126,83 @@ atom-pane-container atom-pane .item-views .pane-item.settings-view{
 
         &.active{
             a{
-                background-color:@blue;
-                color:@white;
-                // box-shadow: 0 0 20px 0 rgba(0,0,0,0.2),0 3px 5px 0 rgba(0,0,0,0.24);
+                // background-color:fade(#9DABBF,10);
+                background-color:@white;
+                box-shadow: 0 0 0 1px #9DABBF;
                 position:relative;
                 z-index:5;
             }
         }
     }
 
+    .button-area{
+        transition:all 0.35s ease-in-out;
+        height:45px;
+        width:45px;
+        margin:0;
+        text-align:center;
+        position:relative;
+
+        &:before{
+            content:"\f02f";
+            font-family:'Octicons Regular';
+            color:#9DABBF;
+            font-size:20px;
+            opacity: 1;
+            position:absolute;
+            top:46%;
+            left:0;
+            right:0;
+            transform:translateY(-50%);
+            margin:0 auto;
+        }
+
+        &:after{
+            background-color:darken(#9DABBF,2);
+            color:@white;
+            content:'Open Config';
+            white-space:nowrap;
+            position:absolute;
+            top:45%;
+            left:90%;
+            transform:translateY(-50%);
+            opacity:0;
+            z-index:-1;
+            padding:5px 8px;
+            border-radius:2px;
+        }
+
+        &:hover{
+            &:after{
+                transition:all 0.35s ease-in-out;
+                opacity:1;
+                z-index:999;
+                left:110%;
+            }
+        }
+
+        button{
+            background-color:transparent;
+            position:absolute;
+            height:100%;
+            width:100%;
+            font-size:0;
+            top:0;
+            left:0;
+            padding:0;
+
+            &:focus{
+                box-shadow:none;
+                outline:none;
+            }
+        }
+    }
+
     .btn{
-        box-shadow: 0 0 12px 0 rgba(0,0,0,0.1),0 2px 5px 0 rgba(0,0,0,0.2);
+        // box-shadow: 0 0 12px 0 rgba(0,0,0,0.1),0 2px 5px 0 rgba(0,0,0,0.2);
         background-image:none;
         background-color:@white;
-        color:@dark-gray;
+        color:#9DABBF;
         border-radius:0;
 
         &:before{
@@ -105,17 +217,295 @@ atom-pane-container atom-pane .item-views .pane-item.settings-view{
 //▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
 
 .section{
-    animation-name: slideFromBelow;
+    animation-name: slideFromLeft;
     animation-duration: 0.5s;
 }
 
 
 //▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
-// _SectionHeading
+// _Headings
 //▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
 
 .section-heading{
-    color:#7D7D7D;
+    color:@white;
 }
 
+.setting-title{
+    color:#839EC4;
+}
+
+
+//▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
+// _Inputs
+//▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+
+input[type="checkbox"]{
+    &:before,
+    &:after{
+        background-color:@white;
+    }
+
+    &:checked{
+        background-color:@blue;
+    }
+}
+
+select.form-control{
+    color:@white;
+    border:none;
+    background-color:transparent;
+    box-shadow:none;
+    position:relative;
+
+    &:before{
+        content:'';
+        height:1px;
+        width:100%;
+        background-color:@blue-gray;
+        position:absolute;
+        bottom:-2px;
+    }
+}
+
+.section atom-text-editor[mini]{
+    background-color:transparent;
+    border-radius:0;
+    box-shadow:none;
+    border:none;
+    border-bottom:1px solid fade(@blue-gray,10);
+    opacity:1;
+    position:relative;
+    overflow:visible;
+    max-height:100% !important;
+    color:fade(@blue-gray,70);
+    transition:all 0.2s ease-in-out;
+
+    &.is-focused{
+        color:@blue-gray;
+
+        &:before{
+            width:100%;
+        }
+    }
+
+    &:before{
+        content:'';
+        position:absolute;
+        bottom:-2px;
+        left:0;
+        right:0;
+        height:2px;
+        width:0;
+        margin:0 auto;
+        background-color:@blue;
+        transition:all 0.2s ease-in-out;
+    }
+}
+
+
+//▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
+// _Links
+//▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+
+.link{
+    color:@teal;
+}
+
+
+//▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
+// _Package
+//▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+
+.package-card{
+    transition:box-shadow 0.2s ease-in-out;
+    background-color:@white;
+    // border-radius:0;
+    padding:0;
+
+    &:hover{
+        box-shadow:0 0 100px 0 rgba(0,0,0,0.6), 0 0 30px rgba(0,0,0,0.3);
+        position:relative;
+        z-index:99;
+    }
+
+    &.disabled{
+        &,.body{
+            opacity:1;
+        }
+
+        .package-description{
+            opacity:0.5;
+        }
+
+        .card-name{
+            background-color:lighten(@base,10);
+        }
+
+        img{
+            -webkit-filter: grayscale(100%);
+            opacity:0.2;
+        }
+    }
+
+    img{
+        border-radius:50%;
+    }
+
+    .card-name{
+        background-color:@blue;
+        padding:5px 15px;
+        font-size:1em;
+
+        *{
+            color:@white;
+        }
+    }
+
+    .stats{
+        *{
+            color:@white;
+        }
+
+        .stats-item{
+            margin-right:15px;
+            margin-top:2px;
+
+            .value{
+                font-size:0.8em;
+            }
+        }
+    }
+
+    .package-description{
+        color:#9DABBF;
+        padding:8px 15px 12px;
+        display:block;
+        box-sizing:border-box;
+        border-bottom:1px solid fade(#9DABBF,20);
+    }
+
+    .package-message.text-warning{
+        font-size:12px;
+        line-height:14px;
+        color:@pink;
+        padding:8px 15px;
+        border-bottom:1px solid fade(#9DABBF,20);
+    }
+
+    .meta{
+        padding:8px 15px;
+
+        .meta-user,
+        .meta-controls{
+            margin-top:0;
+        }
+
+        .meta-user{
+            .author{
+                font-size:12px;
+                color:#9DABBF;
+            }
+        }
+    }
+
+    .btn-group{
+        margin:4px 0 0;
+    }
+
+    .btn{
+        background-image:none;
+        border:none;
+        height:16px;
+        line-height:16px;
+
+        &:not(.icon-cloud-download){
+            font-size:0;
+        }
+
+        &:last-child:not(.icon-cloud-download){
+            padding-right:0;
+        }
+
+        &:hover{
+            background-color:transparent;
+        }
+
+        &.status-indicator{
+            height:10px;
+            width:10px;
+            border-radius:50%;
+            background:@green;
+            margin-top: 3px;
+            margin-left: 10px;
+
+            &.is-disabled{
+                background:@red;
+            }
+        }
+    }
+}
+
+
+//▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
+// _Buttons
+//▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+
+.update-all-button{
+    border-radius:0;
+    background-image:none;
+    color:@white;
+    padding:6px 15px;
+    height:auto;
+    margin-top:-10px;
+    text-transform:uppercase;
+    letter-spacing:1px;
+    transition:box-shadow 0.2s ease-in-out;
+
+    &:not(:first-child){
+        margin-right:5px;
+    }
+
+    &.btn{
+        background-color:lighten(@base,10);
+    }
+
+    &.btn-primary{
+        background-color:@blue;
+    }
+
+    &:hover{
+        box-shadow:0 5px 8px 0 rgba(0, 0, 0, 0.16);
+    }
+}
+
+
+//▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
+// _Badge
+//▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+
+.badge{
+    border-radius:50%;
+    color:@white;
+    background-color:@blue;
+    width:30px;
+    height:30px;
+    padding:0;
+    text-align:center;
+    line-height:30px;
+    font-size:14px;
+    text-shadow:none;
+}
+
+h3 .badge{
+    width:25px;
+    height:25px;
+    line-height:25px;
+    font-size:12px;
+}
+
+}
+
+
+.platform-darwin .settings-view atom-text-editor[mini]::shadow .placeholder-text{
+    color:fade(@blue-gray,50);
 }

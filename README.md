@@ -1,7 +1,7 @@
-![](https://raw.githubusercontent.com/jmcalaway/atom-alphabet-ui/master/alphabet-ui-header.png)
+![](https://raw.githubusercontent.com/jmcalaway/atom-alphabet-ui/master/climate-ui-header.png)
 ---
-
-A user interface theme for [Atom Alphabet Syntax](https://github.com/jmcalaway/atom-alphabet-syntax), meant to enable Atom to comfortably fit alongside your family of Google products. Based on [Google's style guide](https://www.google.com/design/spec/style/color.html#).
+# Description
+A user interface theme for [Climate Syntax](https://github.com/jmcalaway/atom-alphabet-syntax), designed to make developing in Atom both productive and alluring. Climate UI adapts aesthetically based on the active file's language. Program your CSS in sky blue, your JavaScript in summer green, the list goes on and you can customize it all. Enable the popular "Distraction-Free Mode", and see in Tree View only the files you have open (say goodbye to the interruption of long, intimidating folder structures not in use!).
 
 # Installation
 With the terminal open, key the following:
