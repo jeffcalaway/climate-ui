@@ -76,7 +76,7 @@ atom-workspace .horizontal .vertical{
     height          : @tab-height;
     max-width       : @tab-max-width;
     position        : relative;
-    transition      : font-size 0.3s ease-in-out, line-height 0.3s ease-in-out, background-color 0.3s ease-in-out;
+    transition      : font-size 0.3s ease-in-out, line-height 0.3s ease-in-out, background-color 0.3s ease-in-out, -webkit-flex 0.3s ease-in-out;
     overflow        : hidden;
     background-color: darken(@blue,5%);
     padding-right:10px;
@@ -95,17 +95,14 @@ atom-workspace .horizontal .vertical{
     &:after {
         background-color: @blue;
         content         : "";
-        height          : 100%;
-        width           : 100%;
+        height          : 0;
+        width           : 0;
         position        : absolute;
-        bottom          : -20px;
-        left            : 0;
-        right           : 0;
-        margin          : 0 auto;
-        border-radius   : 300%;
-        opacity         : 0;
-        transform       : scale(0.2);
-        transition      : all 0.3s ease-in-out;
+        top             : 50%;
+        left            : 50%;
+        border-radius   : 50%;
+        transform       : translateY(-50%) translateX(-50%);
+        transition      : all 0.5s cubic-bezier(0.420, 0.045, 0.235, 1.500);
     }
 
 //░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
@@ -171,11 +168,13 @@ atom-workspace .horizontal .vertical{
     z-index    : 1;
 
     &:after{
-        bottom       : 0;
+        // bottom       : 0;
         // left      : 0;
-        border-radius: 0;
+        // border-radius: 0;
         opacity      : 1;
-        transform    : scale(1);
+        // transform    : scale(1);
+        height:250px;
+        width:250px;
     }
 }
 

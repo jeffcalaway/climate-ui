@@ -1,0 +1,61 @@
+#linter-inline{
+    background:@white;
+    color:#9EABC0;
+    box-shadow:0 3px 8px rgba(0, 0, 0, 0.4);
+
+    &:before{
+        border-color:transparent transparent @white @white;
+    }
+
+    .badge{
+        text-shadow:none;
+        color:@white;
+        background-color:@blue;
+
+        &.warning{
+            background-color:@red;
+        }
+    }
+
+    linter-message-line{
+        a{
+            text-shadow:none;
+            color:@blue-gray;
+            text-decoration:underline;
+        }
+    }
+}
+
+linter-panel{
+    background-color:@white;
+    box-shadow:0 -10px 16px -5px rgba(0, 0, 0, 0.25);
+
+    linter-message:not(:last-child){
+        border-bottom:1px solid @gray;
+    }
+
+    .badge{
+        text-shadow:none;
+        color:@white !important;
+        background-color:@blue;
+
+        &.warning{
+            background-color:@red !important;
+        }
+    }
+
+    .linter-message-link{
+        color:@blue-gray !important;
+        text-decoration:underline;
+    }
+
+    linter-message-line{
+        color:#9EABC0 !important;
+
+        a{
+            text-shadow:none;
+            color:@blue-gray !important;
+            text-decoration:underline;
+        }
+    }
+}
