@@ -1,4 +1,10 @@
 .hide-idle-tree-items{
+    .list-tree li{
+        &:after{
+            opacity:0.5;
+        }
+    }
+
     .tree-view:not(:hover){
         .entries .directory .header, .entries .directory .header span,.list-tree li:not(.open){
             // color:@gray !important;
@@ -20,5 +26,20 @@
 
     .entries .directory .header span,.list-tree li,.tree-view,.tree-view > .directory > .entries > .directory.list-nested-item{
         transition: all 0.35s ease-in-out;
+    }
+
+    &.light-tree-on-hover{
+        .tree-view:hover{
+            background-color:@white;
+
+            .list-tree li,.entries .directory .header span{
+                color: #6783a5 !important;
+            }
+
+            .directory > .entries > .directory.list-nested-item{
+                border-color:fade(@blue-gray,15);
+                transition:border-color 0.1s ease-in-out;
+            }
+        }
     }
 }

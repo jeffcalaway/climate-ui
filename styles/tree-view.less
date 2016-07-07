@@ -211,19 +211,12 @@
             display:none !important;
         }
     }
+}
 
-    &.light-tree-on-hover{
-        .tree-view:hover{
-            background-color:@white;
-
-            .list-tree li,.entries .directory .header span{
-                color: #6783a5 !important;
-            }
-
-            .directory > .entries > .directory.list-nested-item{
-                border-color:fade(@blue-gray,15);
-                transition:border-color 0.1s ease-in-out;
-            }
+.dim-git-status-in-tree-view{
+    .list-tree li{
+        &:after{
+            opacity:0.5;
         }
     }
 }

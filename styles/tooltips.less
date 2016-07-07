@@ -1,9 +1,13 @@
 @import "ui-variables";
 
 .tooltip {
-  @tip-background-color: @pink;
-  @tip-text-color: @white;
+  @tip-background-color: @white;
+  @tip-text-color: #9EABC0;
   white-space: nowrap;
+
+  .tooltip-inner{
+      box-shadow:0 3px 8px 0 rgba(0, 0, 0, 0.4);
+  }
 
   .keystroke {
     font-family: Helvetica, Arial, sans-serif;
