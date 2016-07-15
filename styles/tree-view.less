@@ -23,7 +23,8 @@
     font-size : @font-size;
     background: @tree-view-background-color;
     padding: 0;
-    // min-width: auto;
+    min-width: 0;
+    overflow:scroll;
 }
 
 //░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
@@ -66,6 +67,18 @@
         text-align:center;
         transition: background-color 0.3s ease-in-out;
         box-shadow:0 0 0 0 rgba(0,0,0,0);
+        position:relative;
+
+        &:after{
+            content:'';
+            height:100%;
+            width:100px;
+            background-color:darken(@blue,5%);
+            position:absolute;
+            top:0;
+            left:100%;
+            transition: background-color 0.3s ease-in-out;
+        }
 
         &,span{
             height:@tab-height;
@@ -220,3 +233,19 @@
         }
     }
 }
+
+
+
+// .tree-view{
+//     > .directory{
+//         position:relative;
+//         > .header{
+//             position:fixed;
+//             top:0;
+//             left:0;
+//             width:100%;
+//
+//
+//         }
+//     }
+// }

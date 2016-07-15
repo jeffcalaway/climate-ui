@@ -1,0 +1,40 @@
+@icon-snippet:@green;
+@icon-tag:@red;
+
+.popover-list.select-list{
+    box-shadow:0 3px 8px 0 rgba(0,0,0,0.3);
+
+    &,.suggestion-description{
+        background-color:@white !important;
+    }
+
+    .suggestion-description-content{
+        color:#9EABC0;
+    }
+
+    li.selected{
+        background-color:@blue-gray !important;
+        text-shadow:none !important;
+
+        .word{
+            &,.character-match{
+                color:@white !important;
+            }
+        }
+
+        .right-label{
+            color:lighten(@blue-gray,20) !important;
+        }
+    }
+
+    .icon{
+        background-color:transparent;
+
+        &.snippet{
+            color:@icon-snippet;
+        }
+        &.tag{
+            color:@icon-tag;
+        }
+    }
+}

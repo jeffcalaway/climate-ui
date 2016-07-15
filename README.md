@@ -11,3 +11,5 @@ apm install climate-ui
 ```
 
 ![screenshot](screenshot-here.png)
+
+[Donate](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=8ZV7PP9C8YCZE)

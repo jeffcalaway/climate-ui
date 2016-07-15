@@ -16,6 +16,7 @@
 //     _Badge
 //     _Keystrokes
 //     _ReadMe
+//     _Keybinding
 //
 //░░░░░░░░░░░░░░░░░░░░░░░░
 
@@ -280,7 +281,7 @@ select.form-control{
     position:relative;
     overflow:visible;
     max-height:100% !important;
-    color:fade(@blue-gray,70);
+    color:lighten(saturate(@blue-gray,20),10);
     transition:all 0.2s ease-in-out;
 
     &.is-focused{
@@ -668,6 +669,75 @@ h3 .badge{
             color:@white;
         }
     }
+
+    *:not(pre){
+        code{
+            background-color:#3F4A64;
+            text-shadow:none;
+            color:lighten(saturate(@blue-gray,2),10);
+            box-shadow:0 2px 3px 0 rgba(0,0,0,0.1);
+        }
+    }
+
+    ul{
+        list-style:none;
+
+        li{
+            position:relative;
+
+            &:before {
+                content: '';
+                height: 5px;
+                width: 5px;
+                background-color: #2E77EE;
+                position: absolute;
+                top: 8px;
+                left: -17px;
+                border-radius: 50%;
+            }
+        }
+    }
+
+    table{
+        th,td{
+            font-size:12px;
+        }
+
+        tr{
+            background-color:#3F4A64;
+            display:table-row;
+        }
+
+        thead,tbody{
+            display:table;
+            width:100%;
+        }
+
+        tbody tr{
+            &:nth-child(even){
+                background-color:lighten(#3F4A64,3);
+            }
+        }
+    }
+
+    kbd{
+        border-top: 1px solid #f5f5f5;
+        padding: 1px 8px 3px;
+        box-shadow: inset 0 0 25px #e8e8e8, 0 1px 0 #c3c3c3, 0 2px 0 #c9c9c9, 0 2px 3px #333;
+        background: none;
+        transform: translateY(-2px);
+        display: inline-block;
+        line-height: 100%;
+        border-radius: 2px;
+        border:none;
+        margin-left: 5px;
+        font-family: Helvetica, Arial, sans-serif;
+        font-size: 11px;
+        padding: 5px !important;
+        color: #555555 !important;
+        text-shadow: none;
+        background-color: #FFF;
+    }
 }
 
 .section-body > .control-group .controls h3{
@@ -687,6 +757,91 @@ h3 .badge{
     color:@white;
     text-shadow:none;
     border-bottom:1px dotted @blue;
+    border-radius:0;
+}
+
+select.form-control {
+    -webkit-appearance: none;
+    background-color:@base;
+    box-shadow: 0 2px 8px 0 rgba(0,0,0,0.25);
+    background-image:url("atom://climate-ui/icons/arrow.svg");
+    background-repeat:no-repeat;
+    background-position:right 50%;
+    background-size:28px auto;
+    padding: 0;
+    line-height: 1rem;
+    height: 3rem;
+    padding: 10px;
+    color: @white;
+    border-radius: 3px;
+    border: 1px solid @blue;
+    cursor: pointer;
+    transition:all 0.2s ease-in-out;
+
+    &:hover {
+        box-shadow: 0 3px 12px 0 rgba(0,0,0,0.3);
+    }
+    &:focus, &:active {
+        background-color:@blue;
+    }
+
+    + .active-theme-settings{
+        color:@blue;
+        margin-top:5px;
+    }
+}
+
+
+//▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
+// _Keybinding
+//▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+
+.native-key-bindings.table,.package-readme table{
+    border-radius:5px;
+    background-color:lighten(@base,5%);
+    box-shadow:0 3px 8px 0 rgba(0,0,0,0.2);
+
+    thead{
+        &,tr{
+            background-color:@blue;
+        }
+
+        th{
+            color:@white;
+        }
+    }
+
+    .icon{
+        &:hover{
+            color:@white;
+        }
+
+        + span {
+            border-top: 1px solid #f5f5f5;
+            padding: 1px 8px 3px;
+            box-shadow: inset 0 0 25px #e8e8e8, 0 1px 0 #c3c3c3, 0 2px 0 #c9c9c9, 0 2px 3px #333;
+            background: none;
+            transform: translateY(-2px);
+            display: inline-block;
+            line-height: 100%;
+            border-radius: 2px;
+            margin-left: 5px;
+            font-family: Helvetica, Arial, sans-serif;
+            font-size: 11px;
+            padding: 5px;
+            color: #555555 !important;
+            text-shadow: none;
+            background-color: #FFF;
+        }
+    }
+
+    .is-user{
+        background-color:@blue;
+
+        .icon,td:not(.keystroke){
+            color:@white;
+        }
+    }
 }
 
 }

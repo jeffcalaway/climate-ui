@@ -43,7 +43,7 @@
             transition: all 0.15s ease-in-out;
         }
 
-        .tab-bar,.tab,.tab:after,.tree-view > .directory > .header{
+        .tab-bar,.tab,.tab:after,.tree-view > .directory > .header,.tree-view > .directory > .header:after{
             background-color:darken(desaturate(@color,4%),5%);
         }
         .tab.active:after{
@@ -58,6 +58,22 @@
 
         .gutter .line-number.cursor-line{
             box-shadow:inset 3px 0 0 0 @color !important;
+        }
+
+        .always-show-open-files-in-tree-view:not(.hide-idle-tree-items) &{
+            .list-tree li.open{
+                &,&:not(.list-nested-item){
+                    color:darken(desaturate(@color,4%),5%);
+                }
+            }
+        }
+
+        .always-show-open-files-in-tree-view.hide-idle-tree-items &{
+            .list-tree:hover li.open{
+                &,&:not(.list-nested-item){
+                    color:darken(desaturate(@color,4%),5%) !important;
+                }
+            }
         }
     }
 }
