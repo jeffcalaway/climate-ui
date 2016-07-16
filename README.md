@@ -11,10 +11,8 @@ With the terminal open, key the following:
 apm install climate-ui
 ```
 
-![screenshot](screenshot-here.png)
-
 # Donation
 ---
 Working on this theme is and will continue to be a passion project, but I'm just a dude -- a dude with a full-time job, a family to support and plenty of other adulting to adult. On the other hand, I'm a persistent developer. If you enjoy this theme, I'll do my best to honor that and continue to support Climate and your enthusiasm for as long and as best I can. But again... I'm just a dude -- a dude who likes coffee. If you love what you see and are so moved to show your support--and keep me awake and working--you're welcome to buy me a cup! I'd sure appreciate it!
 
-(https://raw.githubusercontent.com/jmcalaway/climate-ui/master/donate.png)(https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=8ZV7PP9C8YCZE)
+[![Donate](https://raw.githubusercontent.com/jmcalaway/climate-ui/master/donate.png)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=8ZV7PP9C8YCZE)
