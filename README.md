@@ -21,7 +21,7 @@ Thank you for taking interest in the Climate Atom Theme. The development of this
 ---
 Enthused about the **Climate Atom Theme Suite**? How's about an icon to match!
 
-[![Download](https://raw.githubusercontent.com/jmcalaway/climate-ui/master/icon.png)](https://raw.githubusercontent.com/jmcalaway/climate-ui/master/climate-dock-icon.png)
+[![Download](https://raw.githubusercontent.com/jmcalaway/climate-ui/master/download.png)](https://raw.githubusercontent.com/jmcalaway/climate-ui/master/climate-dock-icon.png)
 
 # Credit
 ---
