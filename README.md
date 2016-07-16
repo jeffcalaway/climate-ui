@@ -13,6 +13,6 @@ apm install climate-ui
 
 # Donation
 ---
-Working on this theme is and will continue to be a passion project, but I'm just a dude -- a dude with a full-time job, a family to support and plenty of other adulting to adult. On the other hand, I'm a persistent developer. If you enjoy this theme, I'll do my best to honor that and continue to support Climate and your enthusiasm for as long and as best I can. But again... I'm just a dude -- a dude who likes coffee. If you love what you see and are so moved to show your support--and keep me awake and working--you're welcome to buy me a cup! I'd sure appreciate it!
+Thank you for taking interest in the Climate Atom Theme. The development of this theme was born of a passion project but also the short, stolen moments I've had between being a loving husband, preparing to be a father and growing as an enthusiastic, nerdy developer. For those who know me, I like to provide my passions with undivided attention, but since that ideology is near impossible to satisfy, my passion projects often get the hours between late and extremely late. If you're happy and enthusiastic about this theme, and you're looking for an avenue to show your support beyond a star, you're welcome to buy me a cup of coffee, if only to keep me up and working! Thank you, everyone!
 
 [![Donate](https://raw.githubusercontent.com/jmcalaway/climate-ui/master/donate.png)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=8ZV7PP9C8YCZE)
