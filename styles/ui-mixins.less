@@ -43,9 +43,22 @@
             transition: all 0.15s ease-in-out;
         }
 
-        .tab-bar,.tab,.tab:after,.tree-view > .directory > .header,.tree-view > .directory > .header:after{
+        .tab-bar,.tab,.tab:after,.tree-tab{
             background-color:darken(desaturate(@color,4%),5%);
         }
+        .tree-view > .directory{
+            > .header{
+                background-color:darken(desaturate(@color,6%),8%);
+            }
+
+            &.expanded > .header{
+                background-color:darken(desaturate(@color,4%),5%);
+            }
+        }
+        // .tree-view > .directory > .header{
+        //     background-color:darken(desaturate(@color,18%),15%);
+        // }
+
         .tab.active:after{
             background-color:@color;
         }

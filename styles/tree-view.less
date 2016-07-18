@@ -43,13 +43,24 @@
 // _Directory
 //▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
 
-.tree-view > .directory{
-    &:first-child{
+@shadow:-15px 0 10px -10px rgba(0,0,0,0.25) inset;
+
+.compact-tree-view-headers{
+    .tree-view > .directory{
         > .header{
             &,span{
-                height:@tab-height;
-                line-height:@tab-height;
+                height:@tab-height - 10px;
+                line-height:@tab-height - 10px;
             }
+        }
+    }
+}
+
+.tree-view > .directory{
+    > .header{
+        &,span{
+            height:@tab-height;
+            line-height:@tab-height;
         }
     }
 
@@ -62,28 +73,45 @@
     //     }
     // }
 
+    @dark:darken(@blue,5%);
+    @darker:darken(desaturate(@blue,6%),8%);
+
     > .header{
-        background-color: darken(@blue,5%);
+        background-color: @darker;
         text-align:center;
         transition: background-color 0.3s ease-in-out;
-        box-shadow:0 0 0 0 rgba(0,0,0,0);
+        box-shadow:0 0 0 0 rgba(0,0,0,0), @shadow;
         position:relative;
+        display:flex;
 
-        &:after{
-            content:'';
-            height:100%;
-            width:100px;
-            background-color:darken(@blue,5%);
-            position:absolute;
-            top:0;
-            left:100%;
-            transition: background-color 0.3s ease-in-out;
-        }
+        // &:after{
+        //     content:'';
+        //     height:2px;
+        //     width:2px;
+        //     position:absolute;
+        //     background-color:@darker;
+        //     bottom:2px;
+        //     left:0;
+        //     right:0;
+        //     margin:0 auto;
+        //     transform:rotate(45deg);
+        //     box-shadow:0 0 0 0 rgba(0,0,0,0);
+        //     transition: all 0.25s ease-in-out;
+        // }
+
+        // EXTENSION
+        // &:after{
+        //     content:'';
+        //     height:100%;
+        //     width:50px;
+        //     background-color:darken(@blue,5%);
+        //     position:absolute;
+        //     top:0;
+        //     left:100%;
+        //     transition: background-color 0.3s ease-in-out;
+        // }
 
         &,span{
-            height:@tab-height;
-            line-height:@tab-height;
-
             &:before{
                 display:none !important;
             }
@@ -92,12 +120,24 @@
         span{
             color:@white;
             padding:0 26px;
+            width: 100%;
         }
     }
 
     &.expanded > .header{
-        box-shadow:0 0 10px 0 rgba(0,0,0,0.05),0 2px 5px 0 rgba(0,0,0,0.05);
+        box-shadow:0 2px 5px 0 rgba(0,0,0,0.1),-7px 0 5px -5px rgba(0,0,0,0.3) inset;
         transition: box-shadow 0.1s 0s ease-in-out, background-color 0.3s ease-in-out;
+
+        &,&:after{
+            background-color:@dark;
+        }
+
+        &:after{
+            height:10px;
+            width:10px;
+            bottom:-5px;
+            box-shadow:4px 4px 5px 0 rgba(0,0,0,0.08);
+        }
     }
 
     &.collapsed > .header{
@@ -105,7 +145,7 @@
     }
 
     &.collapsed + .directory{
-        box-shadow:0 -1px 0 0 rgba(0,0,0, .15);
+        box-shadow:0 -1px 0 0 rgba(0,0,0, .05);
     }
 
     > .entries{
@@ -249,3 +289,49 @@
 //         }
 //     }
 // }
+
+
+.tree-tab{
+    background-color:darken(@blue,5%);
+    box-shadow:0 2px 5px 0 rgba(0,0,0, .15),-18px 0 10px -10px rgba(0,0,0,0.08) inset;
+    position:relative;
+    z-index:10;
+    display: flex;
+    width: 100%;
+    overflow: auto;
+    text-align:center;
+    padding-top:@tab-height;
+    transition:all 0.3s ease-in-out;
+
+    span{
+        position:absolute;
+        top:14px;
+        left:0;
+        width:100%;
+
+        &:after{
+            content:'Projects';
+            color:@white;
+        }
+    }
+}
+
+.tree-view.full-menu{
+    overflow:hidden;
+}
+
+
+@keyframes fadeIn {
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+
+.project-root > .entries.list-tree{
+    animation-name: fadeIn;
+    animation-duration: 0.5s;
+    overflow:scroll;
+}
