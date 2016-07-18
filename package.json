@@ -1,7 +1,7 @@
 {
   "name": "climate-ui",
   "theme": "ui",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "A colorful, adaptive user interface for rivetted developers",
   "keywords": [
     "ui",
