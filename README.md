@@ -9,6 +9,7 @@
 ---
 ### Add Unique File Themes for Easy Management
 Add unique color schemes per file type and always know what language you're working with!
+
 ![](https://raw.githubusercontent.com/jmcalaway/climate-ui/master/file-color-themes.gif)
 
 ### Do What Works Best for You
