@@ -1,7 +1,136 @@
 atom-notification{
-    .info{
+    padding-left:0;
+    box-shadow:0 0 15px 0 rgba(0,0,0,0.2);
+
+    &:not(:first-child){
+        margin-top:8px;
+    }
+
+    .content,
+    .detail{
+        background-color:lighten(@base,5) !important;
+        // background-color:darken(desaturate(@blue,20%),8%) !important;
+        color:@white;
+    }
+
+    &:before{
+        width:38px !important;
+        height:42px !important;
+        line-height:42px !important;
+        border-radius:0 !important;
+        margin:0 !important;
+        padding:0 !important;
+    }
+
+    .message{
+        padding-left:50px;
+    }
+
+    .detail{
+        box-shadow:0 1px 3px 0 rgba(0,0,0,0.1) inset;
+    }
+
+    p,.close,.description{
+        color:@white;
+    }
+
+    .close{
+        &:hover{
+            color:@white;
+        }
+    }
+
+    .description{
+        + .btn-toolbar{
+            padding-top:10px;
+        }
+    }
+
+    .btn-toolbar .btn,.btn{
+        background:lighten(@base,12) !important;
+        border-width:0 !important;
+        border-color:transparent !important;
+        border-radius:0;
+        background-image:none;
+        color:@white;
+        font-size:9px !important;
+        padding:2px 15px !important;
+        height:auto !important;
+        text-transform:uppercase;
+        letter-spacing:1px;
+        transition:all 0.2s ease-in-out;
+        font-size:10px;
+        font-weight:100;
+        color:@white !important;
+
+        &.btn-open{
+            background:@blue !important;
+        }
+
+        &:hover{
+            box-shadow:0 5px 8px 0 rgba(0, 0, 0, 0.16);
+        }
+    }
+
+    .btn-issue + .btn-copy-report{
+        margin-left:-5px;
+    }
+
+    .btn-copy-report{
+        color:@white;
+        padding:0;
+        display:inline-block;
+        height:29px;
+        width:29px;
+        text-align:center;
+        background-color:@blue;
+        text-align:center;
+        transition:all 0.3s ease-in-out;
+
+        &:hover{
+            box-shadow:0 5px 8px 0 rgba(0, 0, 0, 0.16);
+        }
+
         &:before{
-            background-color:@blue;
+            line-height:30px;
+            margin-right:0;
+            color:@white;
+        }
+    }
+
+    .close-all{
+        background:transparent !important;
+        border:1px solid @white !important;
+        padding:0 10px !important;
+        opacity:0.6;
+
+        &:hover{
+            opacity:1;
+        }
+    }
+
+    a:not(.btn){
+        color:@teal;
+    }
+
+    &.info{
+        &:before,
+        .message{
+            background-color:@blue !important;
+        }
+    }
+
+    &.warning{
+        &:before,
+        .message{
+            background-color:#FFAA2C !important;
+        }
+    }
+
+    &.error,&.fatal{
+        &:before,
+        .message{
+            background-color:@red !important;
         }
     }
 }
