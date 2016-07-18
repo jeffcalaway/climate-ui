@@ -44,6 +44,8 @@
 //▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
 
 @shadow:-15px 0 10px -10px rgba(0,0,0,0.25) inset;
+@dark:darken(@blue,5%);
+@darker:darken(desaturate(@blue,6%),8%);
 
 .compact-tree-view-headers{
     .tree-view > .directory{
@@ -53,6 +55,23 @@
                 line-height:@tab-height - 10px;
             }
         }
+    }
+}
+
+html:not(.tree-tab-shadows){
+    .tree-view > .directory{
+        > .header{
+            background-color:@dark !important;
+            box-shadow:0 0 0 0 rgba(0,0,0,0), 0 0 0 0 rgba(0,0,0,0), -15px 0 10px -10px rgba(0,0,0,0.1) inset;
+        }
+
+        &.expanded > .header{
+            box-shadow:0 -3px 3px 0 rgba(0,0,0,0.03), 0 2px 5px 0 rgba(0,0,0,0.1), -7px 0 5px -5px rgba(0,0,0,0.05) inset;
+        }
+    }
+
+    .tree-tab{
+        box-shadow:0 2px 5px 0 rgba(0,0,0, .15);
     }
 }
 
@@ -73,14 +92,11 @@
     //     }
     // }
 
-    @dark:darken(@blue,5%);
-    @darker:darken(desaturate(@blue,6%),8%);
-
     > .header{
         background-color: @darker;
         text-align:center;
         transition: background-color 0.3s ease-in-out;
-        box-shadow:0 0 0 0 rgba(0,0,0,0), @shadow;
+        box-shadow:0 0 0 0 rgba(0,0,0,0), 0 0 0 0 rgba(0,0,0,0), @shadow;
         position:relative;
         display:flex;
 
@@ -125,8 +141,8 @@
     }
 
     &.expanded > .header{
-        box-shadow:0 2px 5px 0 rgba(0,0,0,0.1),-7px 0 5px -5px rgba(0,0,0,0.3) inset;
-        transition: box-shadow 0.1s 0s ease-in-out, background-color 0.3s ease-in-out;
+        box-shadow:0 -3px 3px 0 rgba(0,0,0,0.03),0 2px 5px 0 rgba(0,0,0,0.1),-7px 0 5px -5px rgba(0,0,0,0.3) inset;
+        transition: box-shadow 0.2s ease-in-out, background-color 0.3s ease-in-out;
 
         &,&:after{
             background-color:@dark;
@@ -141,7 +157,7 @@
     }
 
     &.collapsed > .header{
-        transition: box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out;
+        transition: box-shadow 0.2s ease-in-out, background-color 0.3s ease-in-out;
     }
 
     &.collapsed + .directory{

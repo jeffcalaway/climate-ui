@@ -43,21 +43,9 @@
             transition: all 0.15s ease-in-out;
         }
 
-        .tab-bar,.tab,.tab:after,.tree-tab{
+        .tab-bar,.tab,.tab:after,.tree-tab,.tree-view > .directory > .header{
             background-color:darken(desaturate(@color,4%),5%);
         }
-        .tree-view > .directory{
-            > .header{
-                background-color:darken(desaturate(@color,6%),8%);
-            }
-
-            &.expanded > .header{
-                background-color:darken(desaturate(@color,4%),5%);
-            }
-        }
-        // .tree-view > .directory > .header{
-        //     background-color:darken(desaturate(@color,18%),15%);
-        // }
 
         .tab.active:after{
             background-color:@color;
@@ -85,6 +73,20 @@
             .list-tree:hover li.open{
                 &,&:not(.list-nested-item){
                     color:darken(desaturate(@color,4%),5%) !important;
+                }
+            }
+        }
+    }
+
+    .tree-tab-shadows{
+        body[active-grammar*="@{filetype}"]{
+            .tree-view > .directory{
+                > .header{
+                    background-color:darken(desaturate(@color,6%),8%) !important;
+                }
+
+                &.expanded > .header{
+                    background-color:darken(desaturate(@color,4%),5%) !important;
                 }
             }
         }
