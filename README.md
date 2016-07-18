@@ -1,7 +1,7 @@
 ![](https://raw.githubusercontent.com/jmcalaway/climate-ui/master/climate-header.png)
 ---
 
-![](https://raw.githubusercontent.com/jmcalaway/climate-ui/master/theme-screenshot.png)
+![](https://raw.githubusercontent.com/jmcalaway/climate-ui/master/theme-screenshot-new.png)
 
 **Climate UI** is a user interface theme for [Climate Syntax](https://github.com/jmcalaway/climate-syntax) designed intuitively to make Atom feel more intelligent and complimentary to your workflow. With features such as *File Themes* and a true *Distraction-Free Mode*, **Climate UI** makes development stand out where it needs to and blend when distracting. There's a tipping scale when it comes to text editors that begs to find a balance between being attractive and being useful. Here's a bit of both.
 
