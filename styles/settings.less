@@ -48,6 +48,24 @@
     }
 }
 
+@keyframes loading {
+    0% {
+        color:@blue;
+        transform:scale(1);
+    }
+    25% {
+        color:@teal;
+        transform:scale(1.1);
+    }
+    50% {
+        transform:scale(1);
+    }
+    75% {
+        color:@blue;
+        transform:scale(1) rotate(180deg);
+    }
+}
+
 
 //▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
 // _Base
@@ -859,5 +877,17 @@ select.form-control {
     h1{
         border-bottom:1px solid #6880aa;
         padding-bottom:10px;
+    }
+}
+
+
+
+.install-button.is-installing{
+    &:before{
+        content:'\f09a';
+        color:@blue;
+        animation-name: loading;
+        animation-duration: 1.5s;
+        animation-iteration-count: infinite;
     }
 }
