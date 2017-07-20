@@ -38,24 +38,18 @@
   text-shadow: none;
 }
 .color-to-filetype(@filetype, @color){
-    html:not(.tree-tab-shadows){
-        body[active-grammar*="@{filetype}"]{
-            .tree-view > .directory > .header{
-                background-color:darken(desaturate(@color,4%),5%);
-            }
-        }
-    }
-
     body[active-grammar*="@{filetype}"]{
         .tab-bar.tab.active:after{
             transition: all 0.15s ease-in-out;
         }
 
-        .tab-bar,.tab,.tab:after,.tree-tab,.tree-view > .directory > .header{
+        .tab-bar,.tab,.tab:after,.tree-view > .directory > .header,
+        .tree-view .project-root.collapsed > .header{
             background-color:darken(desaturate(@color,4%),5%);
         }
 
-        .tab.active:after{
+        .tab.active:after,
+        .tree-view .project-root.expanded > .header{
             background-color:@color;
         }
 
@@ -81,20 +75,6 @@
             .list-tree li.open:not(.selected){
                 &,&:not(.list-nested-item){
                     color:@text-color-highlight;
-                }
-            }
-        }
-    }
-
-    .tree-tab-shadows{
-        body[active-grammar*="@{filetype}"]{
-            .tree-view > .directory{
-                > .header{
-                    background-color:darken(desaturate(@color,6%),8%);
-                }
-
-                &.expanded > .header{
-                    background-color:darken(desaturate(@color,4%),5%);
                 }
             }
         }
