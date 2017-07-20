@@ -78,9 +78,9 @@
         }
 
         .always-show-open-files-in-tree-view.hide-idle-tree-items &{
-            .list-tree:hover li.open{
+            .list-tree li.open:not(.selected){
                 &,&:not(.list-nested-item){
-                    color:darken(desaturate(@color,4%),5%) !important;
+                    color:@text-color-highlight;
                 }
             }
         }
