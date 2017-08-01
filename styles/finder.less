@@ -153,7 +153,7 @@ atom-panel-container.bottom > .tool-panel.panel-bottom{
                     }
                 }
 
-                .cursor,&::shadow .cursor{
+                .cursor,&.editor .cursor{
                     border-color:@gray;
                 }
             }
@@ -239,7 +239,7 @@ atom-panel-container.bottom > .tool-panel.panel-bottom{
     }
 }
 
-.platform-darwin atom-text-editor[mini]::shadow .placeholder-text{
+.platform-darwin atom-text-editor[mini].editor .placeholder-text{
     color:@gray;
     font-weight:200;
 }

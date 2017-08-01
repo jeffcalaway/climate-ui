@@ -6,13 +6,9 @@
     }
 
     .tree-view:not(:hover){
-        .entries .directory .header, .entries .directory .header span,.list-tree li:not(.open){
+        .entries .directory .header, .entries .directory .header span,.list-tree li:not(.selected){
             // color:@gray !important;
             color:fade(@blue-gray,15%);
-        }
-
-        .list-tree li.open{
-            color:@text-color-highlight;
         }
 
         > .directory > .entries > .directory.list-nested-item{
@@ -32,7 +28,7 @@
         .tree-view:hover{
             background-color:@white;
 
-            .list-tree li,.entries .directory .header span{
+            .list-tree li:not(.selected),.entries .directory .header span{
                 color: #6783a5;
             }
 

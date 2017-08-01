@@ -20,11 +20,14 @@
 //▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
 
 .tree-view {
-    font-size : @font-size;
     background: @tree-view-background-color;
     padding: 0;
     min-width: 0;
     overflow:scroll;
+
+    .full-menu {
+        padding: 0;
+    }
 }
 
 //░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
@@ -48,7 +51,8 @@
 @darker:darken(desaturate(@blue,6%),8%);
 
 .compact-tree-view-headers{
-    .tree-view > .directory{
+    .tree-view .project-root,
+    .tree-view .directory{
         > .header{
             &,span{
                 height:@tab-height - 10px;
@@ -58,7 +62,7 @@
     }
 }
 
-html:not(.tree-tab-shadows){
+html{
     .tree-view > .directory{
         > .header{
             background-color:@dark;
@@ -69,19 +73,22 @@ html:not(.tree-tab-shadows){
             box-shadow:0 -3px 3px 0 rgba(0,0,0,0.05), 0 2px 5px 0 rgba(0,0,0,0.1), -7px 0 5px -5px rgba(0,0,0,0.05) inset;
         }
     }
-
-    .tree-tab{
-        box-shadow:0 2px 5px 0 rgba(0,0,0, .15);
-    }
 }
 
-.tree-view > .directory{
+.tree-view .directory,
+.tree-view .project-root{
+    &.expanded {
+      padding-bottom: 12px;
+    }
     > .header{
         &,span{
             height:@tab-height;
             line-height:@tab-height;
         }
     }
+}
+
+.tree-view .project-root{
 
     // &.collapsed{
     //     > .header{
@@ -165,12 +172,10 @@ html:not(.tree-tab-shadows){
     }
 
     > .entries{
-        padding:12px 0;
-
         > .directory.list-nested-item{
             // padding-top:12px;
-            padding-bottom:12px;
-            margin-bottom:12px;
+            // padding-bottom:12px;
+            // margin-bottom:12px;
             border-bottom:1px solid lighten(@tree-view-background-color,2);
         }
     }
@@ -228,7 +233,7 @@ html:not(.tree-tab-shadows){
 
     &.directory{
         &:after{
-            top:10px;
+            top:20px;
         }
     }
 
@@ -306,30 +311,9 @@ html:not(.tree-tab-shadows){
 //     }
 // }
 
-
-.tree-tab{
-    background-color:darken(@blue,5%);
-    box-shadow:0 2px 5px 0 rgba(0,0,0, .15),-18px 0 10px -10px rgba(0,0,0,0.08) inset;
-    position:relative;
-    z-index:10;
-    display: flex;
-    width: 100%;
-    overflow: auto;
-    text-align:center;
-    padding-top:@tab-height;
-    transition:all 0.3s ease-in-out;
-
-    span{
-        position:absolute;
-        top:14px;
-        left:0;
-        width:100%;
-
-        &:after{
-            content:'Projects';
-            color:@white;
-        }
-    }
+atom-panel-container.left .tab-bar .tab{
+  max-width: 100%;
+  width: 100%;
 }
 
 .tree-view.full-menu{

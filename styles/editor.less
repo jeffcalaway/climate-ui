@@ -1,7 +1,7 @@
 @import "ui-variables";
 @import "ui-mixins";
 
-atom-text-editor[mini], atom-text-editor[mini]::shadow {
+atom-text-editor[mini], atom-text-editor[mini].editor {
   color: @text-color-highlight;
   background-color: @input-background-color;
   border: 1px solid @input-border-color;
@@ -15,15 +15,6 @@ atom-text-editor[mini], atom-text-editor[mini]::shadow {
   }
 }
 
-
-
-// atom-text-editor[mini].is-focused, atom-text-editor[mini].is-focused::shadow {
-//   background-color: lighten(@input-background-color, 5%);
-//   .selection .region { background-color: desaturate(@background-color-info, 50%); }
-// }
-
-
-
-.settings-view .section atom-text-editor[mini] .selection .region, .settings-view .section atom-text-editor[mini]::shadow .selection .region{
+.settings-view .section atom-text-editor[mini] .selection .region, .settings-view .section atom-text-editor[mini].editor .selection .region{
     background-color: @dark-base !important;
 }
